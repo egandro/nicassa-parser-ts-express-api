@@ -1,0 +1,40 @@
+{
+  "name": "nicassa-parser-ts-express-api",
+  "description": "API parser for Typescript based Express REST Server",
+  "version": "0.0.3",
+  "author": "Harald Fielker <harald.fielker@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egandro/nicassa-parser-ts-express-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/egandro/nicassa-parser-ts-express-api/issues"
+  },
+  "bin": {
+    "nicassa-parser-ts-express-api": "launcher.js"
+  },
+  "main": "index.ts",
+  "dependencies": {
+    "@types/node": "^6.0.55",
+    "@types/nomnom": "^0.0.28",
+    "@types/sequelize": "^4.0.39",
+    "nomnom": "^1.8.1",
+    "prompt": "^1.0.0",
+    "ts-node": "^2.0.0",
+    "typescript": "^2.1.4"
+  },
+  "devDependencies": {
+    "codelyzer": "^2.0.0-beta.4",
+    "tslint": "^4.2.0"
+  },
+  "scripts": {},
+  "keywords": [
+    "nodejs",
+    "object relational mapper",
+    "json",
+    "typescript",
+    "express",
+    "nicassa"
+  ],
+  "license": "MIT"
+}
