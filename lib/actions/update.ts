@@ -1,5 +1,6 @@
 let fs = require('fs');
 let path = require('path');
+let slash = require('slash');
 let process = require('process');
 
 import { Filter } from '../persistance/filter';
@@ -70,7 +71,7 @@ export class UpdateMetaDataTable {
 
         for (let i = 0; i < metadata.Controllers.length; i++) {
             let ctrl = metadata.Controllers[i];
-            ctrl.location = './' + path.relative(basePath, ctrl.location);
+            ctrl.location = './' + slash(path.relative(basePath, ctrl.location));
         }
     }
 
