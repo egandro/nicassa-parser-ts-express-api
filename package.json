@@ -1,7 +1,7 @@
 {
   "name": "nicassa-parser-ts-express-api",
   "description": "API parser for Typescript based Express REST Server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Harald Fielker <harald.fielker@gmail.com>",
   "repository": {
     "type": "git",
@@ -15,18 +15,17 @@
   },
   "main": "index.ts",
   "dependencies": {
-    "@types/node": "^6.0.55",
+    "@types/node": "^7.0.22",
     "@types/nomnom": "^0.0.28",
-    "@types/sequelize": "^4.0.39",
+    "@types/sequelize": "^4.0.55",
     "nomnom": "^1.8.1",
     "prompt": "^1.0.0",
     "slash": "^1.0.0",
-    "ts-node": "^2.0.0",
-    "typescript": "^2.1.4"
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.3"
   },
   "devDependencies": {
-    "codelyzer": "^2.0.0-beta.4",
-    "tslint": "^4.2.0"
+    "tslint": "^5.3.2"
   },
   "scripts": {},
   "keywords": [
