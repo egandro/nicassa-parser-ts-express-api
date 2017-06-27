@@ -190,7 +190,9 @@ function getModelDescription(modelTypeDeclaration: ts.InterfaceDeclaration | ts.
 
 function getNodeDescription(node: ts.InterfaceDeclaration | ts.ClassDeclaration | ts.PropertyDeclaration | ts.ParameterDeclaration) {
     let symbol = MetadataGenerator.current.typeChecker.getSymbolAtLocation(node.name as ts.Node);
-
+    if (symbol == null || symbol === undefined) {
+        return '';
+    }
     /**
     * TODO: Workaround for what seems like a bug in the compiler
     * Warrants more investigation and possibly a PR against typescript
@@ -202,6 +204,9 @@ function getNodeDescription(node: ts.InterfaceDeclaration | ts.ClassDeclaration 
     }
 
     let comments = symbol.getDocumentationComment();
+    if (comments == null || comments === undefined) {
+        return '';
+    }
     if (comments.length) { return ts.displayPartsToString(comments); }
 
     return '';

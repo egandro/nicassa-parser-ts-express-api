@@ -78,6 +78,9 @@ export class MethodGenerator {
 
     private getMethodDescription() {
         let symbol = MetadataGenerator.current.typeChecker.getSymbolAtLocation(this.node.name);
+        if (symbol == null || symbol === undefined) {
+            return '';
+        }
 
         let comments = symbol.getDocumentationComment();
         if (comments.length) { return ts.displayPartsToString(comments); }

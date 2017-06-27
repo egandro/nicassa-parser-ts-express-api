@@ -100,6 +100,9 @@ export class ParameterGenerator {
 
     private getParameterDescription(node: ts.ParameterDeclaration) {
         const symbol = MetadataGenerator.current.typeChecker.getSymbolAtLocation(node.name);
+        if (symbol == null || symbol === undefined) {
+            return '';
+        }
 
         const comments = symbol.getDocumentationComment();
         if (comments.length) { return ts.displayPartsToString(comments); }
