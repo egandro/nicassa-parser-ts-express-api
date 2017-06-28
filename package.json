@@ -1,7 +1,7 @@
 {
   "name": "nicassa-parser-ts-express-api",
   "description": "API parser for Typescript based Express REST Server",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "Harald Fielker <harald.fielker@gmail.com>",
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   "dependencies": {
     "nomnom": "^1.8.1",
     "prompt": "^1.0.0",
+    "sha.js": "^2.4.8",
     "slash": "^1.0.0",
     "ts-node": "^3.0.4",
     "typescript": "^2.3.3"

@@ -2,6 +2,7 @@ let fs = require('fs');
 let path = require('path');
 let slash = require('slash');
 let process = require('process');
+const shajs = require('sha.js');
 
 import { Filter } from '../persistance/filter';
 import { NicassaParserTSExpressApi } from '../persistance/nicassaparsertsexpressapi';
@@ -85,11 +86,24 @@ export class UpdateMetaDataTable {
         }
 
         let toplevel: any = JSON.parse(str);
+        toplevel.nicassaParserTSExpressApi.lastUpdateUTC = ''; // nullify date
+
+        str = JSON.stringify(toplevel, null, 2);
+        let currentChecksum = this.checkSum(str);
 
         toplevel.nicassaParserTSExpressApi.formatVersion = '1.0';
-        toplevel.nicassaParserTSExpressApi.lastUpdateUTC = (new Date()).toUTCString();
         toplevel.nicassaParserTSExpressApi.metadata = data;
 
+        str = JSON.stringify(toplevel, null, 2);
+        let updateChecksum = this.checkSum(str);
+
+        if (updateChecksum === currentChecksum) {
+            console.log('no changes detected...');
+            return;
+        }
+
+        // set update date
+        toplevel.nicassaParserTSExpressApi.lastUpdateUTC = (new Date()).toUTCString();
         str = JSON.stringify(toplevel, null, 2);
 
         try {
@@ -98,6 +112,10 @@ export class UpdateMetaDataTable {
             console.error('error: can\'t update file "' + this.fileName + '"');
             process.exit(-1);
         }
+    }
+
+    protected checkSum(data: Buffer|string): string {
+        return shajs('sha256').update(data).digest('hex');
     }
 }
 
