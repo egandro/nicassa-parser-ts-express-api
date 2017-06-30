@@ -1,7 +1,7 @@
 {
   "name": "nicassa-parser-ts-express-api",
-  "description": "API parser for Typescript based Express REST Server",
-  "version": "0.0.11",
+  "description": "Depricated - please use https://github.com/lukeautry/tsoa",
+  "version": "0.0.12",
   "author": "Harald Fielker <harald.fielker@gmail.com>",
   "repository": {
     "type": "git",
@@ -29,12 +29,6 @@
   },
   "scripts": {},
   "keywords": [
-    "nodejs",
-    "object relational mapper",
-    "json",
-    "typescript",
-    "express",
-    "nicassa"
   ],
   "license": "MIT"
 }
