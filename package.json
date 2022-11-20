@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.22",
-    "@types/nomnom": "^0.0.28",
+    "@types/nomnom": "^0.0.29",
     "tslint": "^5.3.2"
   },
   "scripts": {},
